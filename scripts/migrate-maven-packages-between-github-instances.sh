@@ -59,6 +59,8 @@ if command -v python3 &> /dev/null; then
     fi
 
     # Build the tool and create a marker file if successful
+    python3 -m venv ./tool/mvnfeed-cli/.venv
+    source ./tool/mvnfeed-cli/.venv/bin/activate
     cd ./tool/mvnfeed-cli && python3 ./scripts/dev_setup.py && touch .marker && cd $temp_dir
   fi
 else
